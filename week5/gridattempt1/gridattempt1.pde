@@ -8,6 +8,8 @@ float ratioWidth = 1;
 float ratioHeight = 1;
 float ratio = 1;
 
+boolean showGrid = false;
+
 //main sketch will access modules via array and place things into them
 
 void setup() {
@@ -27,9 +29,9 @@ void setup() {
   canvas.beginDraw();
   canvas.smooth(8); 
   
-  //      if (keyPressed == true){
-  grid.display();
-  //}
+  if (showGrid) {
+    grid.display();
+  }
   
   canvas.endDraw();
 
@@ -53,3 +55,7 @@ void calculateResizeRatio()
 }
 
 
+void mousePressed()
+{
+  showGrid = !showGrid;
+}
